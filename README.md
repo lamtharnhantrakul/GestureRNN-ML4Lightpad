@@ -1,5 +1,5 @@
 # GestureRNN-ML4Lightpad
-Using LSTM's to learn a musician's musical gestures on the Roli Lightpad and collaboratively generate new movements
+Using LSTM's to learn a musician's musical gestures on the Roli Lightpad and collaboratively generate new musical responses
 
 # Checkout the Demo video!
 This was originally my final project from Prof. Jason Freeman's "MUSI6002: Interactive Music" class at the Georgia Tech Center for Music Technology.
@@ -9,7 +9,7 @@ This was originally my final project from Prof. Jason Freeman's "MUSI6002: Inter
 ## *ML4Lightpad* introduction
 We use machine learning and deep learning to create a new kind of musical instrument based on the new Roli Lightpad instrument. Firstly, we use Wekinator's machine learning capabilities to continuously interpolate between various sonic parameters in a custom-designed *tension* synthesizer in Ableton Live. More importantly, we train a three-layer LSTM that learns to generate gestures and swipes across the surface of the Lightpad based on user input called *GestureRNN*. GestureRNN regresses continuous values of (x,y) coordinates and instantaneous pressure (p) in real-time based on a user's seed gesture.
 
-<img src="assets/flow_diagram.png" width=900" height="170">
+<img src="assets/flow_diagram.png" width="900" height="170">
 
 ### Rationale
 
@@ -25,7 +25,7 @@ The work was heavily inspired by [David Ha's *SketchRNN*](https://magenta.tensor
 
 A high level system diagram of ML4Lightpad system consisting of the Lightpad, MaxMSP, Python and Ableton Live is shown below.
 
-<img src="assets/system_diagram.png" width="400" height="560">
+<img src="assets/system_diagram.png" width="800" height="560">
 
 There are many **many** moving parts in this project. I will attempt to explain each component so that if applicable, you can still use parts of this project in your own work.
 
