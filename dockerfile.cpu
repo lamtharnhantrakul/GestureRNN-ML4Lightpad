@@ -1,0 +1,43 @@
+
+###########
+#
+#      DOCKER CONTAINER FOR MIR Project 2017
+# MAINTAINED BY: Lamtharn (Hanoi) Hantrakul -- hanoi@smartear.io | hanoi7@gmail.com | lhantrakul3@gatech.edu
+# The purpose of this container is to provide a stable base image to run the GestureRNN
+# server. The ports to forward UDP messages in and out of the container to MAX/MSP
+# are all contained in this dockerfile.
+#
+# Please add new pip/apt installs in this block. Don't forget a "&& \" at the end
+# of all non-final lines. Thanks!
+#
+###########
+
+### Pull official  Python Distribution 3.5
+FROM python:3.5-slim
+
+# For sending OSC messages
+RUN pip install python-osc
+
+# Install CPU version of Tensorflow
+RUN pip install --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.4.0-cp35-cp35m-linux_x86_64.whl
+# Install keras
+RUN pip install keras
+# Install h5py
+RUN pip install h5py
+
+# Set working directory to /GestureRNN
+WORKDIR /GestureRNN
+
+# Copy the server script into the container
+ADD ./GestureRNN_server.py /GestureRNN
+
+# Copy the models into the container
+ADD ./models /GestureRNN/models
+
+# Make port 8000 and 8001 accessible outside the container.
+# Make sure these ports are set to UDP
+EXPOSE 127.0.0.1:8000:8000/udp
+EXPOSE 127.0.0.1:8001:8001/udp
+
+# Run the script when container starts
+CMD ["python", "GestureRNN_server.py"]
