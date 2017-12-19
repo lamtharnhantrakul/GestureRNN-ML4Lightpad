@@ -9,7 +9,7 @@ This was originally my final project from Prof. Jason Freeman's "MUSI6002: Inter
 ## *ML4Lightpad* introduction
 We use machine learning and deep learning to create a new kind of musical instrument based on the new Roli Lightpad instrument. Firstly, we use Wekinator's machine learning capabilities to continuously interpolate between various sonic parameters in a custom-designed *tension* synthesizer in Ableton Live. More importantly, we train a three-layer LSTM that learns to generate gestures and swipes across the surface of the Lightpad based on user input called *GestureRNN*. GestureRNN regresses continuous values of (x,y) coordinates and instantaneous pressure (p) in real-time based on a user's seed gesture.
 
-<img src="assets/flow_diagram.png" width="900" height="170">
+<img src="assets/flow_diagram2.png" width="900" height="170">
 
 ### Rationale
 
